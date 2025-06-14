@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Marina Waters | Marine Biologist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --deep-sea: #31708E;
+            --ocean-blue: #5085A5;
+            --light-wave: #8FC1E3;
+            --seaweed: #687864;
+            --foam: #F7F9FB;
+            --gold-accent: #D4AF37;
+            --text-dark: #2C3E50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+        body {
+            background-color: var(--foam);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(247, 249, 251, 0.98);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            padding: 1rem 5%;
+            background-color: rgba(247, 249, 251, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--deep-sea);
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo i {
+            margin-right: 12px;
+            color: var(--gold-accent);
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--ocean-blue);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, var(--ocean-blue), var(--gold-accent));
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--deep-sea);
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 10rem 5% 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--deep-sea);
+            font-size: 2.8rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--ocean-blue), var(--gold-accent));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Home Section */
+        #home {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, rgba(247, 249, 251, 0.9) 0%, rgba(143, 193, 227, 0.3) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #home::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Q50,80 0,100 Z" fill="%238FC1E3" opacity="0.1"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        .home-content {
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .home-content h1 {
+            font-size: 3.5rem;
+            color: var(--deep-sea);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .home-content h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--ocean-blue);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .home-content h2::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, var(--ocean-blue), var(--gold-accent));
+        }
+
+        .home-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            color: var(--text-dark);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--ocean-blue), var(--deep-sea));
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(49, 112, 142, 0.2);
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--deep-sea), var(--ocean-blue));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(49, 112, 142, 0.3);
+        }
+
+        .btn:hover::before {
+            opacity: 1;
+        }
+
+        .home-image {
+            position: relative;
+            width: 450px;
+            height: 450px;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 15px solid white;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.15);
+            transform: perspective(1000px) rotateY(15deg);
+            transition: transform 0.5s;
+        }
+
+        .home-image:hover {
+            transform: perspective(1000px) rotateY(5deg);
+        }
+
+        .home-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .home-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Marine Elements */
+        .marine-element {
+            position: absolute;
+            opacity: 0.8;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .fish {
+            width: 80px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--ocean-blue), var(--deep-sea));
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: swim 20s linear infinite;
+            filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+        }
+
+        .fish::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            right: 10px;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .fish::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: var(--gold-accent);
+            clip-path: polygon(100% 50%, 0 0, 0 100%);
+        }
+
+        .bubble {
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            animation: float 10s linear infinite;
+            filter: blur(1px);
+        }
+
+        .coral {
+            width: 100px;
+            height: 150px;
+            background: linear-gradient(to top, var(--seaweed), #8B5A2B);
+            clip-path: polygon(50% 0%, 70% 20%, 80% 40%, 90% 60%, 100% 80%, 70% 100%, 30% 100%, 0% 80%, 10% 60%, 20% 40%, 30% 20%);
+            animation: sway 12s ease-in-out infinite;
+            filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%2331708E" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%2331708E" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%2331708E"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        /* Animations */
+        @keyframes swim {
+            0% {
+                transform: translateX(-100px) rotateY(0deg);
+            }
+
+            50% {
+                transform: translateX(calc(100vw + 100px)) rotateY(0deg);
+            }
+
+            51% {
+                transform: translateX(calc(100vw + 100px)) rotateY(180deg);
+            }
+
+            100% {
+                transform: translateX(-100px) rotateY(180deg);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-100vh) translateX(20px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes sway {
+
+            0%,
+            100% {
+                transform: rotate(-5deg);
+            }
+
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+
+        /* Skills Section */
+        #skills {
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #skills::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,100 L100,100 L100,0 Q50,20 0,0 Z" fill="%238FC1E3" opacity="0.05"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skill-card {
+            background-color: var(--foam);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(143, 193, 227, 0.2);
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: linear-gradient(to bottom, var(--ocean-blue), var(--gold-accent));
+            transition: height 0.4s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card:hover::before {
+            height: 100%;
+        }
+
+        .skill-card h3 {
+            color: var(--ocean-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skill-card h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: var(--gold-accent);
+            border-radius: 50%;
+        }
+
+        .skill-card p {
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--ocean-blue);
+            margin-bottom: 1.5rem;
+            transition: transform 0.4s;
+        }
+
+        .skill-card:hover .skill-icon {
+            transform: scale(1.1);
+            color: var(--deep-sea);
+        }
+
+        /* About Section */
+        #about {
+            background: linear-gradient(135deg, var(--light-wave) 0%, var(--ocean-blue) 100%);
+            color: white;
+            position: relative;
+        }
+
+        #about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Q50,80 0,100 Z" fill="white" opacity="0.05"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text {
+            flex: 1;
+            padding-right: 4rem;
+        }
+
+        .about-text h2 {
+            color: white;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.8rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 15px;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+            transform: rotateY(-10deg);
+            transition: transform 0.5s;
+            border: 10px solid white;
+        }
+
+        .about-image:hover img {
+            transform: rotateY(0deg);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--gold-accent);
+            border-radius: 15px;
+            top: 20px;
+            left: 20px;
+            z-index: -1;
+            transition: all 0.5s;
+        }
+
+        .about-image:hover::before {
+            top: 15px;
+            left: 15px;
+        }
+
+        /* Education Section */
+        #education {
+            background-color: var(--foam);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #education::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,100 L100,100 L100,0 Q50,20 0,0 Z" fill="%235085A5" opacity="0.03"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        .education-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .education-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(143, 193, 227, 0.2);
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .education-card h3 {
+            color: var(--ocean-blue);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .education-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--ocean-blue), var(--gold-accent));
+        }
+
+        .education-card h4 {
+            color: var(--seaweed);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .education-card .date {
+            color: var(--gold-accent);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background-color: rgba(80, 133, 165, 0.1);
+            border-radius: 50px;
+        }
+
+        .education-card p {
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .education-icon {
+            font-size: 2.5rem;
+            color: var(--ocean-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Experience Section */
+        #experience {
+            background-color: var(--foam);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #experience::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,100 L100,100 L100,0 Q50,20 0,0 Z" fill="%235085A5" opacity="0.03"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--light-wave), var(--ocean-blue));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            padding: 10px 50px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.5s;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 5px solid var(--ocean-blue);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+            box-shadow: 0 0 0 4px var(--gold-accent);
+        }
+
+        .left {
+            left: 0;
+            text-align: right;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::after {
+            right: -17px;
+        }
+
+        .right::after {
+            left: -17px;
+        }
+
+        .timeline-content {
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.4s;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            transform: rotate(45deg);
+            top: 20px;
+        }
+
+        .left .timeline-content::before {
+            right: -15px;
+        }
+
+        .right .timeline-content::before {
+            left: -15px;
+        }
+
+        .timeline-content h3 {
+            color: var(--ocean-blue);
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+        }
+
+        .timeline-content h4 {
+            color: var(--seaweed);
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content p {
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .timeline-date {
+            color: var(--gold-accent);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background-color: rgba(80, 133, 165, 0.1);
+            border-radius: 50px;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--deep-sea);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Q50,80 0,100 Z" fill="white" opacity="0.05"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .contact-header h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: all 0.4s;
+            backdrop-filter: blur(5px);
+        }
+
+        .contact-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            color: var(--gold-accent);
+            min-width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .contact-details span {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            text-align: left;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--seaweed);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background-color: var(--foam);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--ocean-blue);
+            box-shadow: 0 0 0 3px rgba(80, 133, 165, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--ocean-blue), var(--deep-sea));
+            color: white;
+            border: none;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(49, 112, 142, 0.3);
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(49, 112, 142, 0.4);
+            background: linear-gradient(135deg, var(--deep-sea), var(--ocean-blue));
+        }
+
+        .contact-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .contact-social a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-social a:hover {
+            color: var(--gold-accent);
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--seaweed);
+            color: white;
+            text-align: center;
+            padding: 3rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--gold-accent), var(--ocean-blue));
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: all 0.3s;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            color: var(--gold-accent);
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--ocean-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--deep-sea);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .home-content h1 {
+                font-size: 3rem;
+            }
+
+            .home-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .home-image {
+                width: 400px;
+                height: 400px;
+            }
+
+            .about-image img {
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .home-content {
+                max-width: 500px;
+            }
+
+            .home-image {
+                width: 350px;
+                height: 350px;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 3rem;
+            }
+
+            .about-image {
+                margin-top: 2rem;
+            }
+
+            .timeline::before {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .left,
+            .right {
+                left: 0;
+                text-align: left;
+            }
+
+            .left .timeline-content::before,
+            .right .timeline-content::before {
+                left: 15px;
+                right: auto;
+                top: -15px;
+                transform: rotate(135deg);
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-row: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #home {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 12rem;
+            }
+
+            .home-content {
+                margin-bottom: 4rem;
+                max-width: 100%;
+            }
+
+            .home-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .home-content h2 {
+                font-size: 1.6rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .home-content h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+            }
+
+            .home-image {
+                width: 300px;
+                height: 300px;
+                margin: 0 auto;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--foam);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 3rem;
+                transition: all 0.5s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+
+            .nav-links a {
+                font-size: 1.3rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .contact-info {
+                gap: 1.5rem;
+            }
+
+            .contact-item {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .home-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .home-content h2 {
+                font-size: 1.4rem;
+            }
+
+            .home-image {
+                width: 280px;
+                height: 280px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-card {
+                padding: 2rem;
+            }
+
+            .education-card {
+                padding: 2rem;
+            }
+
+            .contact-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .contact-header p {
+                font-size: 1rem;
+            }
+
+            .contact-item {
+                padding: 1.5rem;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .contact-icon {
+                margin-bottom: 1rem;
+            }
+
+            .contact-details {
+                text-align: center;
+            }
+
+            .social-links a {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">
+            <i class="fas fa-water"></i>
+            <span>Dr. Marina Waters</span>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <!-- Marine elements -->
+        <div class="marine-element fish animate__animated animate__fadeIn" style="top: 20%; animation-delay: 0s;"></div>
+        <div class="marine-element fish animate__animated animate__fadeIn" style="top: 70%; animation-delay: 5s;"></div>
+        <div class="marine-element bubble animate__animated animate__fadeIn" style="left: 10%; animation-delay: 2s;">
+        </div>
+        <div class="marine-element bubble animate__animated animate__fadeIn" style="left: 30%; animation-delay: 4s;">
+        </div>
+        <div class="marine-element bubble animate__animated animate__fadeIn" style="left: 70%; animation-delay: 1s;">
+        </div>
+        <div class="marine-element coral animate__animated animate__fadeIn" style="bottom: 10%; right: 5%;"></div>
+
+        <div class="home-content animate__animated animate__fadeInLeft">
+            <h1>Ashish Mahapatra</h1>
+            <h2>Marine Biologist & Ocean Conservationist</h2>
+            <p>I am an enthusiastic marine biologist with a strong background in detailed research and analysis. I am
+                passionate about marine environmental issues, climate change, and animal conservation. I have experience
+                in
+                handling marine samples, collecting data, and working well with different teams. I am looking for a
+                challenging job where I can grow, work hard, build good relationships, and use my skills to benefit the
+                organization.</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+        <div class="home-image animate__animated animate__fadeInRight">
+            <img src="hero-image.png" alt="Ashish Mahapatra">
+        </div>
+        <div class="wave"></div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title animate__animated animate__fadeIn">Research Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card animate__animated">
+                <div class="skill-icon">
+                    <i class="fas fa-dna"></i>
+                </div>
+                <h3>DNA Barcoding</h3>
+                <p>Expertise in genetic identification techniques using DNA barcoding for species identification and
+                    biodiversity studies.</p>
+            </div>
+            <div class="skill-card animate__animated">
+                <div class="skill-icon">
+                    <i class="fas fa-vial"></i>
+                </div>
+                <h3>Biological Sample Collection</h3>
+                <p>Proficient in field collection, preservation, and identification of biological specimens for research
+                    purposes.</p>
+            </div>
+            <div class="skill-card animate__animated">
+                <div class="skill-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3>Research Analysis</h3>
+                <p>Skilled in qualitative and quantitative analysis of research data using appropriate scientific
+                    methodologies.</p>
+            </div>
+            <div class="skill-card animate__animated">
+                <div class="skill-icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h3>Technical Recording</h3>
+                <p>Experienced in maintaining accurate and detailed technical records of experimental procedures and
+                    results.</p>
+            </div>
+            <div class="skill-card animate__animated">
+                <div class="skill-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3>Laboratory Protocols</h3>
+                <p>Thorough knowledge of standard laboratory procedures, safety protocols, and quality control measures.
+                </p>
+            </div>
+            <div class="skill-card animate__animated">
+                <div class="skill-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Equipment Operation</h3>
+                <p>Proficient in calibration, operation, and maintenance of laboratory equipment and research
+                    instruments.</p>
+            </div>
+            <div class="skill-card animate__animated">
+                <div class="skill-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Teamwork & Communication</h3>
+                <p>Strong collaborative skills with experience working in multidisciplinary research teams and
+                    communicating findings.</p>
+            </div>
+            <div class="skill-card animate__animated">
+                <div class="skill-icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <h3>Data Visualization</h3>
+                <p>Skilled in creating clear, effective visual representations of complex data for interpretation and
+                    presentation.</p>
+            </div>
+            <div class="skill-card animate__animated">
+                <div class="skill-icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <h3>Computer Applications</h3>
+                <p>Proficient in various scientific software and computer applications for data analysis and research
+                    documentation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-content">
+            <div class="about-text animate__animated animate__fadeInLeft">
+                <h2 class="section-title">About Me</h2>
+                <p>With over 15 years of experience in marine biology, I've dedicated my career to understanding and
+                    protecting our oceans. My journey began with a childhood fascination with tide pools that evolved
+                    into a lifelong passion for marine conservation.</p>
+                <p>I hold a Ph.D. in Marine Biology from the University of Ocean Sciences and have conducted field
+                    research in over 20 countries, working with local communities, governments, and international
+                    organizations to promote sustainable marine practices.</p>
+                <p>My current research focuses on the impacts of climate change on coral reef ecosystems and developing
+                    resilience strategies to protect these vital habitats. I believe that through science, education,
+                    and policy, we can create meaningful change for our oceans.</p>
+                <a href="#experience" class="btn">View My Experience</a>
+            </div>
+            <div class="about-image animate__animated animate__fadeInRight">
+                <img src="about-image.png" alt="Ashish Mahapatra">
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title animate__animated animate__fadeIn">Education</h2>
+        <div class="education-container">
+            <!-- <div class="education-card animate__animated">
+                <div class="education-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Ph.D. in Marine Biology</h3>
+                <h4>University of Ocean Sciences</h4>
+                <div class="date">2008 - 2012</div>
+                <p>Specialized in coral reef ecosystems and climate change impacts. Dissertation on "Resilience
+                    Mechanisms in Tropical Coral Reefs Under Thermal Stress."</p>
+            </div> -->
+            <div class="education-card animate__animated">
+                <div class="education-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h3>M.Sc. in Marine Biology</h3>
+                <h4>Berhampur University,
+                    Bhanjabihar</h4>
+                <div class="date">2022 - 2024</div>
+                <p>Focused on marine biodiversity and conservation strategies. Thesis on "Population Dynamics of
+                    Endangered Marine Species in the Pacific."</p>
+            </div>
+            <div class="education-card animate__animated">
+                <div class="education-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>B.Sc. in Zoology</h3>
+                <h4>Government Science
+                    College, Chatrapur </h4>
+                <div class="date">2019 - 2022</div>
+                <p>Majored in Marine Biology with minors in Environmental Science and Chemistry. Graduated with honors.
+                </p>
+            </div>
+            <div class="education-card animate__animated">
+                <div class="education-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>Higher Secondary (Science)</h3>
+                <h4>Army Public School</h4>
+                <div class="date">2017 - 2019</div>
+                <p>Completed 10+2 with Physics, Chemistry, Biology, and Mathematics (PCMB). Developed strong foundation
+                    in life sciences and laboratory techniques. Participated in science exhibitions and environmental
+                    awareness programs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title animate__animated animate__fadeIn">Professional Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-date">2025 - Present</div>
+                    <h3>SAKTI SIKHA DEVELOPMENT SOCIETY, BARIPADA
+                        CO-ORDINATOR (BMC & PBR)</h3>
+                    <!-- <h4>Ocean Conservation International</h4> -->
+                    <!-- <p>Led the formation of Biodiversity Management Committees (BMCs) in 25 Panchayats across Ganjam
+                        district, engaging local communities in biodiversity conservation and ensuring the establishment
+                        of committees
+                        to drive regional sustainability efforts. </p> -->
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <!-- <div class="timeline-date">2015 - 2020</div> -->
+                    <h3> Formation of BMCs: </h3>
+                    <!-- <h4>Pacific Marine Research Institute</h4> -->
+                    <p>Led the formation of Biodiversity Management Committees (BMCs) in 25 Panchayats across Ganjam
+                        district, engaging local communities in biodiversity conservation and ensuring the establishment
+                        of committees
+                        to drive regional sustainability efforts. </p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <!-- <div class="timeline-date">2012 - 2015</div> -->
+                    <h3> Biodiversity Data Collection & Management: </h3>
+                    <!-- <h4>University of Marine Sciences</h4> -->
+                    <p>Coordinated the collection, documentation, and management of local biodiversity data for the
+                        People's
+                        Biodiversity Register (PBR), ensuring accuracy and up-to-date records for conservation efforts.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <!-- <div class="timeline-date">2006 - 2008</div> -->
+                    <h3>Monitoring & Reporting:</h3>
+                    <!-- <h4>Marine Ecology Lab</h4> -->
+                    <p>Conducted regular field visits to monitor biodiversity, documenting species and habitat health,
+                        and created
+                        detailed reports shared with stakeholders to guide conservation actions and policy development.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <!-- <div class="timeline-date">2012 - 2015</div> -->
+                    <h3> Community Engagement & Conflict Resolution: </h3>
+                    <!-- <h4>University of Marine Sciences</h4> -->
+                    <p>Led outreach programs and workshops with local communities, including schools and fishermen, to
+                        raise
+                        awareness about biodiversity conservation, resolve conflicts between conservation and
+                        livelihoods, and
+                        encourage active participation in the PBR process.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-header animate__animated animate__fadeIn">
+                <h2 class="section-title">Contact Me</h2>
+                <p>Have questions about my research or interested in collaboration opportunities? Feel free to reach out
+                    through the contact form or directly via email or phone.</p>
+            </div>
+
+            <div class="contact-content">
+                <form class="contact-form animate__animated animate__fadeInLeft">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required
+                            placeholder="What is your message about?">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required
+                            placeholder="Type your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+
+                <div class="contact-info animate__animated animate__fadeInRight">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <span>dr.marinawaters@example.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Office</h3>
+                            <span>Ocean Research Center<br>123 Marine Way<br>San Diego, CA 92101</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Office Hours</h3>
+                            <span>Monday - Friday<br>9:00 AM - 5:00 PM PST</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="contact-social animate__animated animate__fadeInUp">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-researchgate"></i></a>
+                <a href="#"><i class="fab fa-google-scholar"></i></a>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="copyright">&copy; 2023 Dr. Marina Waters. All rights reserved.</p>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.innerHTML = navLinks.classList.contains('active') ?
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenu.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Back to top button
+            const backToTop = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        // Back to top functionality
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation for marine elements
+        document.addEventListener('DOMContentLoaded', function () {
+            // Create additional bubbles
+            const homeSection = document.getElementById('home');
+            for (let i = 0; i < 15; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'marine-element bubble animate__animated animate__fadeIn';
+                bubble.style.left = Math.random() * 100 + '%';
+                bubble.style.bottom = Math.random() * 20 + '%';
+                bubble.style.width = (Math.random() * 15 + 5) + 'px';
+                bubble.style.height = bubble.style.width;
+                bubble.style.animationDelay = (Math.random() * 5) + 's';
+                bubble.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                homeSection.appendChild(bubble);
+            }
+
+            // Animate skills cards on scroll
+            const skillCards = document.querySelectorAll('.skill-card');
+            const educationCards = document.querySelectorAll('.education-card');
+            const animateSkills = () => {
+                skillCards.forEach((card, index) => {
+                    const cardPosition = card.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+
+                    if (cardPosition < screenPosition) {
+                        card.classList.add('animate__fadeInUp');
+                        card.style.animationDelay = `${index * 0.1}s`;
+                    }
+                });
+
+                educationCards.forEach((card, index) => {
+                    const cardPosition = card.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+
+                    if (cardPosition < screenPosition) {
+                        card.classList.add('animate__fadeInUp');
+                        card.style.animationDelay = `${index * 0.1}s`;
+                    }
+                });
+            };
+
+            // Animate timeline items on scroll
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const animateTimeline = () => {
+                timelineItems.forEach(item => {
+                    const itemPosition = item.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+
+                    if (itemPosition < screenPosition) {
+                        item.classList.add('visible');
+                    }
+                });
+            };
+
+            // Animate contact items on scroll
+            const contactItems = document.querySelectorAll('.contact-item, .contact-form, .contact-header, .contact-social');
+            const animateContact = () => {
+                contactItems.forEach((item, index) => {
+                    const itemPosition = item.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+
+                    if (itemPosition < screenPosition) {
+                        if (item.classList.contains('contact-header')) {
+                            item.classList.add('animate__fadeIn');
+                        } else if (item.classList.contains('contact-form')) {
+                            item.classList.add('animate__fadeInLeft');
+                        } else if (item.classList.contains('contact-social')) {
+                            item.classList.add('animate__fadeInUp');
+                        } else {
+                            item.classList.add('animate__fadeInRight');
+                            item.style.animationDelay = `${index * 0.2}s`;
+                        }
+                    }
+                });
+            };
+
+            // Initial check
+            animateSkills();
+            animateTimeline();
+            animateContact();
+
+            // Check on scroll
+            window.addEventListener('scroll', () => {
+                animateSkills();
+                animateTimeline();
+                animateContact();
+            });
+        });
+    </script>
+</body>
+
+</html>
