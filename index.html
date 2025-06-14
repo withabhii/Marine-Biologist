@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Marina Waters | Marine Biologist</title>
+    <title>Ashish Mahapatra | Marine Biologist & Conservationist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="icon" href="https://img.icons8.com/color/48/marine-biology.png" type="image/x-icon">
     <style>
         :root {
             --deep-sea: #31708E;
@@ -55,7 +56,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 5%;
+            padding: 1.2rem 5%;
             transition: all 0.4s ease;
         }
 
@@ -66,18 +67,24 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--deep-sea);
             display: flex;
             align-items: center;
             font-family: 'Playfair Display', serif;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .logo:hover {
+            color: var(--ocean-blue);
         }
 
         .logo i {
-            margin-right: 12px;
+            margin-right: 10px;
             color: var(--gold-accent);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
 
         .nav-links {
@@ -86,7 +93,7 @@
         }
 
         .nav-links li {
-            margin-left: 2.5rem;
+            margin-left: 2rem;
         }
 
         .nav-links a {
@@ -95,7 +102,7 @@
             font-weight: 500;
             transition: all 0.3s;
             position: relative;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .nav-links a:hover {
@@ -127,7 +134,7 @@
         /* Sections */
         section {
             min-height: 100vh;
-            padding: 10rem 5% 6rem;
+            padding: 8rem 5% 6rem;
             position: relative;
             overflow: hidden;
         }
@@ -160,6 +167,8 @@
             background: linear-gradient(135deg, rgba(247, 249, 251, 0.9) 0%, rgba(143, 193, 227, 0.3) 100%);
             position: relative;
             overflow: hidden;
+            padding-top: 6rem;
+            /* gap: 3rem; */
         }
 
         #home::before {
@@ -178,6 +187,7 @@
         .home-content {
             max-width: 600px;
             z-index: 2;
+            flex: 1;
         }
 
         .home-content h1 {
@@ -228,6 +238,17 @@
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(49, 112, 142, 0.2);
             z-index: 1;
+            margin-right: 1rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--ocean-blue);
+            color: var(--ocean-blue);
+        }
+
+        .btn-outline:hover {
+            color: white;
         }
 
         .btn::before {
@@ -252,16 +273,21 @@
             opacity: 1;
         }
 
+        .btn-outline::before {
+            background: linear-gradient(135deg, var(--ocean-blue), var(--deep-sea));
+        }
+
         .home-image {
             position: relative;
-            width: 450px;
-            height: 450px;
+            width: 400px;
+            height: 400px;
             border-radius: 30px;
             overflow: hidden;
             border: 15px solid white;
             box-shadow: 0 30px 50px rgba(0, 0, 0, 0.15);
             transform: perspective(1000px) rotateY(15deg);
             transition: transform 0.5s;
+            flex-shrink: 0;
         }
 
         .home-image:hover {
@@ -279,95 +305,73 @@
             transform: scale(1.05);
         }
 
-        /* Marine Elements */
-        .marine-element {
-            position: absolute;
-            opacity: 0.8;
-            z-index: 1;
-            pointer-events: none;
+        .home-btns {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
-        .fish {
-            width: 80px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--ocean-blue), var(--deep-sea));
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            animation: swim 20s linear infinite;
-            filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
-        }
-
-        .fish::before {
-            content: '';
+        /* Ocean Wave Animation */
+        .ocean-waves {
             position: absolute;
-            top: 15px;
-            right: 10px;
-            width: 10px;
-            height: 10px;
-            background-color: white;
-            border-radius: 50%;
-        }
-
-        .fish::after {
-            content: '';
-            position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
-            width: 20px;
-            height: 20px;
-            background-color: var(--gold-accent);
-            clip-path: polygon(100% 50%, 0 0, 0 100%);
-        }
-
-        .bubble {
-            width: 20px;
-            height: 20px;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 50%;
-            animation: float 10s linear infinite;
-            filter: blur(1px);
-        }
-
-        .coral {
-            width: 100px;
-            height: 150px;
-            background: linear-gradient(to top, var(--seaweed), #8B5A2B);
-            clip-path: polygon(50% 0%, 70% 20%, 80% 40%, 90% 60%, 100% 80%, 70% 100%, 30% 100%, 0% 80%, 10% 60%, 20% 40%, 30% 20%);
-            animation: sway 12s ease-in-out infinite;
-            filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+            z-index: -1;
         }
 
         .wave {
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100%;
-            height: 150px;
+            width: 200%;
+            height: 100%;
             background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%2331708E" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%2331708E" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%2331708E"/></svg>');
-            background-size: cover;
-            background-repeat: no-repeat;
-            z-index: -1;
+            background-repeat: repeat no-repeat;
+            background-position: 0 bottom;
+            background-size: 50% 100px;
+            animation: wave 15s linear infinite;
         }
 
-        /* Animations */
-        @keyframes swim {
+        .wave:nth-of-type(2) {
+            bottom: 10px;
+            animation: wave 18s linear reverse infinite;
+            opacity: 0.5;
+        }
+
+        .wave:nth-of-type(3) {
+            bottom: 15px;
+            animation: wave 20s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes wave {
             0% {
-                transform: translateX(-100px) rotateY(0deg);
+                transform: translateX(0) translateZ(0) scaleY(1);
             }
 
             50% {
-                transform: translateX(calc(100vw + 100px)) rotateY(0deg);
-            }
-
-            51% {
-                transform: translateX(calc(100vw + 100px)) rotateY(180deg);
+                transform: translateX(-25%) translateZ(0) scaleY(0.8);
             }
 
             100% {
-                transform: translateX(-100px) rotateY(180deg);
+                transform: translateX(-50%) translateZ(0) scaleY(1);
             }
         }
 
-        @keyframes float {
+        /* Floating Bubbles */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            animation: float-up linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes float-up {
             0% {
                 transform: translateY(0) translateX(0);
                 opacity: 0;
@@ -380,18 +384,6 @@
             100% {
                 transform: translateY(-100vh) translateX(20px);
                 opacity: 0;
-            }
-        }
-
-        @keyframes sway {
-
-            0%,
-            100% {
-                transform: rotate(-5deg);
-            }
-
-            50% {
-                transform: rotate(5deg);
             }
         }
 
@@ -574,6 +566,34 @@
         .about-image:hover::before {
             top: 15px;
             left: 15px;
+        }
+
+        .about-highlights {
+            margin: 2rem 0;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-icon {
+            font-size: 1.5rem;
+            color: var(--gold-accent);
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .highlight-text p {
+            margin-bottom: 0;
+            font-size: 1rem;
         }
 
         /* Education Section */
@@ -910,6 +930,17 @@
             color: white;
         }
 
+        .contact-details a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: var(--gold-accent);
+            text-decoration: underline;
+        }
+
         .contact-details span {
             font-size: 1.1rem;
             opacity: 0.9;
@@ -1099,8 +1130,8 @@
             }
 
             .home-image {
-                width: 400px;
-                height: 400px;
+                width: 380px;
+                height: 380px;
             }
 
             .about-image img {
@@ -1176,11 +1207,12 @@
             #home {
                 flex-direction: column;
                 text-align: center;
-                padding-top: 12rem;
+                padding-top: 10rem;
+                gap: 2rem;
             }
 
             .home-content {
-                margin-bottom: 4rem;
+                margin-bottom: 3rem;
                 max-width: 100%;
             }
 
@@ -1208,6 +1240,12 @@
 
             .section-title {
                 font-size: 2.5rem;
+                margin-bottom: 3rem;
+            }
+
+            .section-title::after {
+                height: 3px;
+                bottom: -10px;
             }
 
             .nav-links {
@@ -1251,6 +1289,14 @@
 
             .contact-form {
                 padding: 2rem;
+            }
+
+            .home-btns {
+                justify-content: center;
+            }
+
+            .ocean-waves {
+                height: 80px;
             }
         }
 
@@ -1312,6 +1358,10 @@
                 height: 50px;
                 font-size: 1.5rem;
             }
+
+            .ocean-waves {
+                height: 60px;
+            }
         }
     </style>
 </head>
@@ -1319,10 +1369,10 @@
 <body>
     <!-- Navigation -->
     <nav id="navbar">
-        <div class="logo">
+        <a href="#home" class="logo">
             <i class="fas fa-water"></i>
-            <span>Dr. Marina Waters</span>
-        </div>
+            <span>Ashish Mahapatra</span>
+        </a>
         <div class="menu-toggle" id="mobile-menu">
             <i class="fas fa-bars"></i>
         </div>
@@ -1338,32 +1388,27 @@
 
     <!-- Home Section -->
     <section id="home">
-        <!-- Marine elements -->
-        <div class="marine-element fish animate__animated animate__fadeIn" style="top: 20%; animation-delay: 0s;"></div>
-        <div class="marine-element fish animate__animated animate__fadeIn" style="top: 70%; animation-delay: 5s;"></div>
-        <div class="marine-element bubble animate__animated animate__fadeIn" style="left: 10%; animation-delay: 2s;">
+        <!-- Ocean waves animation -->
+        <div class="ocean-waves">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
         </div>
-        <div class="marine-element bubble animate__animated animate__fadeIn" style="left: 30%; animation-delay: 4s;">
-        </div>
-        <div class="marine-element bubble animate__animated animate__fadeIn" style="left: 70%; animation-delay: 1s;">
-        </div>
-        <div class="marine-element coral animate__animated animate__fadeIn" style="bottom: 10%; right: 5%;"></div>
 
         <div class="home-content animate__animated animate__fadeInLeft">
-            <h1>Ashish Mahapatra</h1>
-            <h2>Marine Biologist & Ocean Conservationist</h2>
-            <p>I am an enthusiastic marine biologist with a strong background in detailed research and analysis. I am
-                passionate about marine environmental issues, climate change, and animal conservation. I have experience
-                in
-                handling marine samples, collecting data, and working well with different teams. I am looking for a
-                challenging job where I can grow, work hard, build good relationships, and use my skills to benefit the
-                organization.</p>
-            <a href="#contact" class="btn">Get In Touch</a>
+            <h1>Mahapatra Ashish Godabrisha</h1>
+            <h2>Marine Biologist & Conservationist</h2>
+            <p>A passionate researcher with an academic background in Marine Biology and professional experience in
+                biodiversity research, community outreach, and conservation documentation. Dedicated to marine and
+                wildlife ecosystem conservation through scientific research and community engagement.</p>
+            <div class="home-btns">
+                <a href="#contact" class="btn">Get In Touch</a>
+                <a href="Mahapatra Ashish CV.pdf" class="btn btn-outline">Download CV</a>
+            </div>
         </div>
         <div class="home-image animate__animated animate__fadeInRight">
             <img src="hero-image.png" alt="Ashish Mahapatra">
         </div>
-        <div class="wave"></div>
     </section>
 
     <!-- Skills Section -->
@@ -1449,17 +1494,62 @@
     <section id="about">
         <div class="about-content">
             <div class="about-text animate__animated animate__fadeInLeft">
-                <h2 class="section-title">About Me</h2>
-                <p>With over 15 years of experience in marine biology, I've dedicated my career to understanding and
-                    protecting our oceans. My journey began with a childhood fascination with tide pools that evolved
-                    into a lifelong passion for marine conservation.</p>
-                <p>I hold a Ph.D. in Marine Biology from the University of Ocean Sciences and have conducted field
-                    research in over 20 countries, working with local communities, governments, and international
-                    organizations to promote sustainable marine practices.</p>
-                <p>My current research focuses on the impacts of climate change on coral reef ecosystems and developing
-                    resilience strategies to protect these vital habitats. I believe that through science, education,
-                    and policy, we can create meaningful change for our oceans.</p>
-                <a href="#experience" class="btn">View My Experience</a>
+                <h2 class="section-title">Professional Profile</h2>
+                <p>I am Mahapatra Ashish Godabrisha, a passionate researcher and conservationist with an academic
+                    background in Marine Biology and professional experience in biodiversity research, community
+                    outreach, and conservation documentation. My academic journey laid the foundation for my interest in
+                    the biological sciences, which was further strengthened through field-based experiences with some of
+                    India's premier biodiversity organizations.</p>
+
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <h4>Academic Background</h4>
+                            <p>My fascination with marine and wildlife ecosystems led me to pursue formal education in
+                                Marine Biology, where I received training in ecological research, species
+                                identification, field survey techniques, and marine conservation strategies.</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <h4>Professional Journey</h4>
+                            <p>I began my career as a Consultant with the Odisha Biodiversity Board, working on
+                                biodiversity documentation and community involvement. Later, I served as a Project
+                                Associate at the Zoological Survey of India, focusing on ecological and faunal surveys.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <h4>Field Experience</h4>
+                            <p>Participated in turtle nesting monitoring and awareness programs in coastal Odisha,
+                                particularly during the Olive Ridley turtle mass nesting (arribada) events.</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <h4>Vision</h4>
+                            <p>I aim to remain at the intersection of science and community, where traditional wisdom
+                                converges with modern ecological knowledge. My long-term goal is to contribute to marine
+                                biodiversity conservation and coastal ecosystem resilience.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="about-image animate__animated animate__fadeInRight">
                 <img src="about-image.png" alt="Ashish Mahapatra">
@@ -1471,23 +1561,12 @@
     <section id="education">
         <h2 class="section-title animate__animated animate__fadeIn">Education</h2>
         <div class="education-container">
-            <!-- <div class="education-card animate__animated">
-                <div class="education-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <h3>Ph.D. in Marine Biology</h3>
-                <h4>University of Ocean Sciences</h4>
-                <div class="date">2008 - 2012</div>
-                <p>Specialized in coral reef ecosystems and climate change impacts. Dissertation on "Resilience
-                    Mechanisms in Tropical Coral Reefs Under Thermal Stress."</p>
-            </div> -->
             <div class="education-card animate__animated">
                 <div class="education-icon">
                     <i class="fas fa-university"></i>
                 </div>
                 <h3>M.Sc. in Marine Biology</h3>
-                <h4>Berhampur University,
-                    Bhanjabihar</h4>
+                <h4>Berhampur University, Bhanjabihar</h4>
                 <div class="date">2022 - 2024</div>
                 <p>Focused on marine biodiversity and conservation strategies. Thesis on "Population Dynamics of
                     Endangered Marine Species in the Pacific."</p>
@@ -1497,8 +1576,7 @@
                     <i class="fas fa-book"></i>
                 </div>
                 <h3>B.Sc. in Zoology</h3>
-                <h4>Government Science
-                    College, Chatrapur </h4>
+                <h4>Government Science College, Chatrapur</h4>
                 <div class="date">2019 - 2022</div>
                 <p>Majored in Marine Biology with minors in Environmental Science and Chemistry. Graduated with honors.
                 </p>
@@ -1511,9 +1589,7 @@
                 <h4>Army Public School</h4>
                 <div class="date">2017 - 2019</div>
                 <p>Completed 10+2 with Physics, Chemistry, Biology, and Mathematics (PCMB). Developed strong foundation
-                    in life sciences and laboratory techniques. Participated in science exhibitions and environmental
-                    awareness programs.
-                </p>
+                    in life sciences and laboratory techniques.</p>
             </div>
         </div>
     </section>
@@ -1525,59 +1601,42 @@
             <div class="timeline-item left">
                 <div class="timeline-content">
                     <div class="timeline-date">2025 - Present</div>
-                    <h3>SAKTI SIKHA DEVELOPMENT SOCIETY, BARIPADA
-                        CO-ORDINATOR (BMC & PBR)</h3>
-                    <!-- <h4>Ocean Conservation International</h4> -->
-                    <!-- <p>Led the formation of Biodiversity Management Committees (BMCs) in 25 Panchayats across Ganjam
-                        district, engaging local communities in biodiversity conservation and ensuring the establishment
-                        of committees
-                        to drive regional sustainability efforts. </p> -->
+                    <h3>SAKTI SIKHA DEVELOPMENT SOCIETY, BARIPADA</h3>
+                    <h4>CO-ORDINATOR (BMC & PBR)</h4>
+                    <p>Leading biodiversity documentation and community engagement initiatives across multiple
+                        Panchayats in Ganjam district.</p>
                 </div>
             </div>
             <div class="timeline-item right">
                 <div class="timeline-content">
-                    <!-- <div class="timeline-date">2015 - 2020</div> -->
-                    <h3> Formation of BMCs: </h3>
-                    <!-- <h4>Pacific Marine Research Institute</h4> -->
+                    <h3>Formation of BMCs</h3>
                     <p>Led the formation of Biodiversity Management Committees (BMCs) in 25 Panchayats across Ganjam
                         district, engaging local communities in biodiversity conservation and ensuring the establishment
-                        of committees
-                        to drive regional sustainability efforts. </p>
+                        of committees to drive regional sustainability efforts.</p>
                 </div>
             </div>
             <div class="timeline-item left">
                 <div class="timeline-content">
-                    <!-- <div class="timeline-date">2012 - 2015</div> -->
-                    <h3> Biodiversity Data Collection & Management: </h3>
-                    <!-- <h4>University of Marine Sciences</h4> -->
+                    <h3>Biodiversity Data Collection & Management</h3>
                     <p>Coordinated the collection, documentation, and management of local biodiversity data for the
-                        People's
-                        Biodiversity Register (PBR), ensuring accuracy and up-to-date records for conservation efforts.
-                    </p>
+                        People's Biodiversity Register (PBR), ensuring accuracy and up-to-date records for conservation
+                        efforts.</p>
                 </div>
             </div>
             <div class="timeline-item right">
                 <div class="timeline-content">
-                    <!-- <div class="timeline-date">2006 - 2008</div> -->
-                    <h3>Monitoring & Reporting:</h3>
-                    <!-- <h4>Marine Ecology Lab</h4> -->
+                    <h3>Monitoring & Reporting</h3>
                     <p>Conducted regular field visits to monitor biodiversity, documenting species and habitat health,
-                        and created
-                        detailed reports shared with stakeholders to guide conservation actions and policy development.
-                    </p>
+                        and created detailed reports shared with stakeholders to guide conservation actions and policy
+                        development.</p>
                 </div>
             </div>
             <div class="timeline-item left">
                 <div class="timeline-content">
-                    <!-- <div class="timeline-date">2012 - 2015</div> -->
-                    <h3> Community Engagement & Conflict Resolution: </h3>
-                    <!-- <h4>University of Marine Sciences</h4> -->
+                    <h3>Community Engagement & Conflict Resolution</h3>
                     <p>Led outreach programs and workshops with local communities, including schools and fishermen, to
-                        raise
-                        awareness about biodiversity conservation, resolve conflicts between conservation and
-                        livelihoods, and
-                        encourage active participation in the PBR process.
-                    </p>
+                        raise awareness about biodiversity conservation, resolve conflicts between conservation and
+                        livelihoods, and encourage active participation in the PBR process.</p>
                 </div>
             </div>
         </div>
@@ -1622,7 +1681,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Email</h3>
-                            <span>dr.marinawaters@example.com</span>
+                            <a href="mailto:ashish.mahapatra@example.com">ashish.mahapatra@example.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1631,7 +1690,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Phone</h3>
-                            <span>+1 (555) 123-4567</span>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1639,8 +1698,8 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
-                            <h3>Office</h3>
-                            <span>Ocean Research Center<br>123 Marine Way<br>San Diego, CA 92101</span>
+                            <h3>Location</h3>
+                            <span>Berhampur, Odisha<br>India</span>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1648,19 +1707,12 @@
                             <i class="fas fa-clock"></i>
                         </div>
                         <div class="contact-details">
-                            <h3>Office Hours</h3>
-                            <span>Monday - Friday<br>9:00 AM - 5:00 PM PST</span>
+                            <h3>Available</h3>
+                            <span>Monday - Friday<br>9:00 AM - 5:00 PM IST</span>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- <div class="contact-social animate__animated animate__fadeInUp">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-researchgate"></i></a>
-                <a href="#"><i class="fab fa-google-scholar"></i></a>
-            </div> -->
         </div>
     </section>
 
@@ -1672,7 +1724,7 @@
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
-        <p class="copyright">&copy; 2023 Dr. Marina Waters. All rights reserved.</p>
+        <p class="copyright">&copy; 2023 Ashish Mahapatra. All rights reserved.</p>
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -1735,93 +1787,83 @@
             });
         });
 
-        // Animation for marine elements
-        document.addEventListener('DOMContentLoaded', function () {
-            // Create additional bubbles
+        // Create floating bubbles
+        function createBubbles() {
             const homeSection = document.getElementById('home');
             for (let i = 0; i < 15; i++) {
                 const bubble = document.createElement('div');
-                bubble.className = 'marine-element bubble animate__animated animate__fadeIn';
+                bubble.className = 'bubble';
                 bubble.style.left = Math.random() * 100 + '%';
                 bubble.style.bottom = Math.random() * 20 + '%';
-                bubble.style.width = (Math.random() * 15 + 5) + 'px';
-                bubble.style.height = bubble.style.width;
+                const size = Math.random() * 20 + 10;
+                bubble.style.width = size + 'px';
+                bubble.style.height = size + 'px';
+                bubble.style.animationDuration = (Math.random() * 10 + 10) + 's';
                 bubble.style.animationDelay = (Math.random() * 5) + 's';
-                bubble.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                bubble.style.opacity = Math.random() * 0.5 + 0.1;
                 homeSection.appendChild(bubble);
             }
+        }
 
-            // Animate skills cards on scroll
+        // Animate elements on scroll
+        function animateOnScroll() {
             const skillCards = document.querySelectorAll('.skill-card');
             const educationCards = document.querySelectorAll('.education-card');
-            const animateSkills = () => {
-                skillCards.forEach((card, index) => {
-                    const cardPosition = card.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.3;
-
-                    if (cardPosition < screenPosition) {
-                        card.classList.add('animate__fadeInUp');
-                        card.style.animationDelay = `${index * 0.1}s`;
-                    }
-                });
-
-                educationCards.forEach((card, index) => {
-                    const cardPosition = card.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.3;
-
-                    if (cardPosition < screenPosition) {
-                        card.classList.add('animate__fadeInUp');
-                        card.style.animationDelay = `${index * 0.1}s`;
-                    }
-                });
-            };
-
-            // Animate timeline items on scroll
             const timelineItems = document.querySelectorAll('.timeline-item');
-            const animateTimeline = () => {
-                timelineItems.forEach(item => {
-                    const itemPosition = item.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.3;
-
-                    if (itemPosition < screenPosition) {
-                        item.classList.add('visible');
-                    }
-                });
-            };
-
-            // Animate contact items on scroll
             const contactItems = document.querySelectorAll('.contact-item, .contact-form, .contact-header, .contact-social');
-            const animateContact = () => {
-                contactItems.forEach((item, index) => {
-                    const itemPosition = item.getBoundingClientRect().top;
+
+            const animateElements = (elements, animationClass) => {
+                elements.forEach((element, index) => {
+                    const elementPosition = element.getBoundingClientRect().top;
                     const screenPosition = window.innerHeight / 1.3;
 
-                    if (itemPosition < screenPosition) {
-                        if (item.classList.contains('contact-header')) {
-                            item.classList.add('animate__fadeIn');
-                        } else if (item.classList.contains('contact-form')) {
-                            item.classList.add('animate__fadeInLeft');
-                        } else if (item.classList.contains('contact-social')) {
-                            item.classList.add('animate__fadeInUp');
-                        } else {
-                            item.classList.add('animate__fadeInRight');
-                            item.style.animationDelay = `${index * 0.2}s`;
+                    if (elementPosition < screenPosition) {
+                        element.classList.add(animationClass);
+                        if (animationClass === 'animate__fadeInUp' || animationClass === 'animate__fadeInRight') {
+                            element.style.animationDelay = `${index * 0.1}s`;
                         }
                     }
                 });
             };
 
-            // Initial check
-            animateSkills();
-            animateTimeline();
-            animateContact();
+            animateElements(skillCards, 'animate__fadeInUp');
+            animateElements(educationCards, 'animate__fadeInUp');
+
+            timelineItems.forEach(item => {
+                const itemPosition = item.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (itemPosition < screenPosition) {
+                    item.classList.add('visible');
+                }
+            });
+
+            contactItems.forEach((item, index) => {
+                const itemPosition = item.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (itemPosition < screenPosition) {
+                    if (item.classList.contains('contact-header')) {
+                        item.classList.add('animate__fadeIn');
+                    } else if (item.classList.contains('contact-form')) {
+                        item.classList.add('animate__fadeInLeft');
+                    } else if (item.classList.contains('contact-social')) {
+                        item.classList.add('animate__fadeInUp');
+                    } else {
+                        item.classList.add('animate__fadeInRight');
+                        item.style.animationDelay = `${index * 0.2}s`;
+                    }
+                }
+            });
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function () {
+            createBubbles();
+            animateOnScroll();
 
             // Check on scroll
-            window.addEventListener('scroll', () => {
-                animateSkills();
-                animateTimeline();
-                animateContact();
-            });
+            window.addEventListener('scroll', animateOnScroll);
         });
     </script>
 </body>
